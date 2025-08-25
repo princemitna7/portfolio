@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Minimal Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/mylogo.png" alt="Logo" />
+      </div>
+      <div class="menu">
+        <a href="#">Weeknotes</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Articles</a>
+        <a href="#">Notes</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-grid">
+    <div class="content">
+      <h1>Hi, I'm Prince Mitna</h1>
+      <p class="intro">A Solution Engineer with 4 year plus experience.</p>
+      <p><a href="#" class="link">Read my latest weeknotes →</a></p>
+    </div>
+    <div class="image">
+      <img src="images/mypic.png" alt="Your photo" class="avatar" />
+    </div>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Prince
+  </footer>
+
+  <button id="theme-toggle">theme: auto</button>
+
+  <script>
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const html = document.documentElement;
+      const toggleBtn = document.getElementById('theme-toggle');
+
+      // Determine and apply saved theme or auto-detect
+      let savedTheme = localStorage.getItem('theme');
+      if (!savedTheme || savedTheme === 'auto') {
+        savedTheme = prefersDark ? 'dark' : 'light';
+      }
+      html.setAttribute('data-theme', savedTheme);
+      toggleBtn.textContent = `theme: ${localStorage.getItem('theme') || 'auto'}`;
+
+      // Toggle theme in a cycle: auto → light → dark → auto
+      toggleBtn.onclick = () => {
+        const current = localStorage.getItem('theme') || 'auto';
+        let next;
+
+        if (current === 'auto') {
+          next = 'light';
+        } else if (current === 'light') {
+          next = 'dark';
+        } else {
+          next = 'auto';
+        }
+
+        // Save the theme and apply it
+        localStorage.setItem('theme', next);
+        toggleBtn.textContent = `theme: ${next}`;
+
+        if (next === 'auto') {
+          html.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+        } else {
+          html.setAttribute('data-theme', next);
+        }
+      };
+  </script>
+</body>
+</html>
