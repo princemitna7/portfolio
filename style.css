@@ -5,6 +5,8 @@ body {
   font-family: Georgia, serif;
   background-color: #fff;
   color: #111;
+  max-width: 50%;
+  margin: 0 auto;
 }
 
 header {
@@ -13,20 +15,30 @@ header {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: flex-start;
-  flex-wrap: wrap;
 }
 
-.logo img {
-  height: 50px;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 2rem;
+  
+}
+
+.logo a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 0.3rem 0;
 }
 
 .menu {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.5rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
 }
 
 .menu a {
@@ -115,6 +127,10 @@ html[data-theme='dark'] .menu a {
   color: #ccc;
 }
 
+html[data-theme='dark'] .logo a {
+  color: #ccc;
+}
+
 html[data-theme='dark'] .intro {
   color: #aaa;
 }
@@ -134,4 +150,21 @@ html[data-theme='dark'] #theme-toggle {
 
 html[data-theme='dark'] #theme-toggle:hover {
   background: #333;
+}
+
+/* Weeknotes Styles */
+.weeknotes {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.weeknotes li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.weeknotes li strong {
+  color: #ccc;;
+  font-weight: 600;
 }
