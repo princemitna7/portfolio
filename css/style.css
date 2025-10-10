@@ -1,0 +1,170 @@
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, serif;
+  background-color: #fff;
+  color: #111;
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+header {
+  padding: 1rem 2rem;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 2rem;
+  
+}
+
+.logo a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 0.3rem 0;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 0.3rem 0;
+}
+
+/* Main two-column layout */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 3rem 2rem;
+  text-align: left;
+}
+
+.content h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.intro {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.link {
+  color: #3366cc;
+  text-decoration: none;
+}
+
+.image {
+  text-align: center;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px; /* Rounded edges but not fully circular */
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: for a nice soft shadow */
+}
+
+/* Footer */
+footer {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  padding-bottom: 3rem;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #fff; /* Default: light mode background */
+  color: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Dark theme override */
+html[data-theme='dark'] #theme-toggle {
+  background-color: #111; /* Matches dark background */
+  box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+}
+
+/* Dark Theme */
+html[data-theme='dark'] body {
+  background-color: #111;
+  color: #eee;
+}
+
+html[data-theme='dark'] .menu a {
+  color: #ccc;
+}
+
+html[data-theme='dark'] .logo a {
+  color: #ccc;
+}
+
+html[data-theme='dark'] .intro {
+  color: #aaa;
+}
+
+html[data-theme='dark'] .link {
+  color: #66aaff;
+}
+
+html[data-theme='dark'] footer {
+  color: #666;
+}
+
+html[data-theme='dark'] #theme-toggle {
+  background: #222;
+  color: #fff;
+}
+
+html[data-theme='dark'] #theme-toggle:hover {
+  background: #333;
+}
+
+/* Weeknotes Styles */
+.weeknotes {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.weeknotes li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.weeknotes li strong {
+  color: #ccc;;
+  font-weight: 600;
+}

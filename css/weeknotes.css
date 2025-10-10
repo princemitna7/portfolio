@@ -5,7 +5,7 @@ body {
   font-family: Georgia, serif;
   background-color: #fff;
   color: #111;
-  max-width: 50%;
+  max-width: 60%;
   margin: 0 auto;
 }
 
@@ -24,7 +24,7 @@ header {
   align-items: center;
   gap: 0.5rem;
   margin-right: 2rem;
-  
+
 }
 
 .logo a {
@@ -51,16 +51,9 @@ header {
 /* Main two-column layout */
 .main-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
   align-items: center;
   padding: 3rem 2rem;
   text-align: left;
-}
-
-.content h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
 }
 
 .intro {
@@ -69,21 +62,12 @@ header {
   margin-bottom: 1.5rem;
 }
 
-.link {
-  color: #3366cc;
-  text-decoration: none;
+ul {
+  list-style-type: none;  /* removes bullets */
 }
 
-.image {
-  text-align: center;
-}
-
-.avatar {
-  width: 200px;
-  height: 200px;
-  border-radius: 20px; /* Rounded edges but not fully circular */
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: for a nice soft shadow */
+li {
+  padding: 2px 0;         /* optional spacing between items */
 }
 
 /* Footer */
@@ -152,19 +136,16 @@ html[data-theme='dark'] #theme-toggle:hover {
   background: #333;
 }
 
-/* Weeknotes Styles */
-.weeknotes {
+.dot-line {
   list-style: none;
-  padding: 0;
-  margin: 1rem 0;
+  font-family: monospace; /* keeps dots aligned */
+  font-size: 16px;
 }
 
-.weeknotes li {
-  margin-bottom: 0.8rem;
-  font-size: 1rem;
+.dot-line li {
+  display: flex;
+  justify-content: space-between; /* left and right text */
 }
 
-.weeknotes li strong {
-  color: #ccc;;
-  font-weight: 600;
-}
+
+
